@@ -1,0 +1,35 @@
+#Write a Python program that accept an even number (>=4, Goldbach number) from the user
+#and create a combinations thatexpress the given number as a sum of two prime numbers.
+#Print the number of combinations
+
+def goldbach():
+    k=[]
+    s=[]
+    flist=[]
+    prm=[]
+    n=int(input('no greater than 4'))
+    a=int((n/2)+1)
+    for i in range (2,a):
+        a=[i,n-i]
+        k.append(a)
+    print(f'inital combination:{k}')   #for first set of combination
+    for l in k:
+        b=l[0]
+        c=l[1]
+        for i in range(2,b):
+            if l[0]%i==0:
+                s.append(l)
+        for i in range(2,c):
+            if l[1]%i==0:
+                s.append(l)
+    
+    for i in s:
+        if i not in flist:           #list of not prime
+            flist.append(i)
+    print(f'the list of not prime{flist}')
+    #to subtract one list from another
+    #naive way
+    for i in k:
+        if i not in flist:
+            prm.append(i)
+    print(f'the required combinations are:{prm}')
