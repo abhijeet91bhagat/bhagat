@@ -1,0 +1,27 @@
+#write a programme to sum of all numerical values(positive integers) embedded in sentence
+def smnum():
+    st=input('string : ')
+    sm=0
+    i=0
+    lst=[]
+    new_lst=[]
+    while i<len(st):#conversion of string into list
+        a=st[i]  
+        lst.append(a)
+        i+=1
+    print(f'list{lst}')
+    for i in lst:
+        try:
+            new_lst.append(int(i))#creation of list with digit only
+        except ValueError:
+            continue
+    print(f'new_list: {new_lst}')
+    print(sum(new_lst))#required sum of all element of list 
+   
+   
+   
+ output:-
+string : dasdsdf78s8s7ys8cyss8
+list['d', 'a', 's', 'd', 's', 'd', 'f', '7', '8', 's', '8', 's', '7', 'y', 's', '8', 'c', 'y', 's', 's', '8']
+new_list: [7, 8, 8, 7, 8, 8]
+46
